@@ -15,3 +15,15 @@ total_summary <- sus_df %>% summarize(Mean=mean(PSI),Median=median(PSI),Variance
 
 lot_summary <- sus_df %>% group_by(Manufacturing_Lot)%>% summarize(Mean=mean(PSI),Median=median(PSI),Variance=var(PSI),SD=sd(PSI))
 
+##t-test
+t.test(total_summary,mu=1500)
+
+#Lot1
+t.test(subset(sus_df$PSI,sus_df$Manufacturing_Lot=='Lot1'),mu=1500)
+#Lot2
+t.test(subset(sus_df$PSI,sus_df$Manufacturing_Lot=='Lot2'),mu=1500)
+#Lot3
+t.test(subset(sus_df$PSI,sus_df$Manufacturing_Lot=='Lot3'),mu=1500)
+
+
+
